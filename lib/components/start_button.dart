@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:run_my_test_project/colors_constants.dart';
 
 class StartButton extends StatelessWidget {
   const StartButton({
     super.key,
     required this.text,
-    required this.textColor,
-    required this.backgroundColor,
     required this.onPress,
   });
 
   final String text;
-  final Color textColor;
-  final Color backgroundColor;
   final VoidCallback? onPress;
 
   @override
@@ -20,7 +17,7 @@ class StartButton extends StatelessWidget {
       onPressed: onPress,
       style: ButtonStyle(
         elevation: MaterialStateProperty.all(4.0),
-        backgroundColor: MaterialStateProperty.all(backgroundColor),
+        backgroundColor: MaterialStateProperty.all(startButtonBackgroundColor),
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30.0),
@@ -34,7 +31,7 @@ class StartButton extends StatelessWidget {
           children: [
             Text(
               text,
-              style: TextStyle(
+              style: const TextStyle(
                 color: textColor,
                 fontSize: 16.0,
                 fontWeight: FontWeight.w800,

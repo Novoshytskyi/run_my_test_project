@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:dotted_border/dotted_border.dart';
+import 'package:run_my_test_project/colors_constants.dart';
 
 class BigDottedBorderContainer extends StatelessWidget {
   const BigDottedBorderContainer({
@@ -12,7 +13,7 @@ class BigDottedBorderContainer extends StatelessWidget {
     return DottedBorder(
       dashPattern: const [4, 8],
       strokeCap: StrokeCap.round,
-      color: const Color(0xFF37616F),
+      color: dottedBorderColor,
       strokeWidth: 2,
       borderType: BorderType.RRect,
       radius: const Radius.circular(15.0),
@@ -21,19 +22,19 @@ class BigDottedBorderContainer extends StatelessWidget {
         child: SizedBox(
           height: 88.0,
           width: double.infinity,
-          child: Stack(
-            alignment: AlignmentDirectional.center,
-            children: [
-              //
-              Image.asset('assets/images/shoes_pack-01.png'),
-              SvgPicture.asset(
-                'assets/icons/add.svg',
-                colorFilter: const ColorFilter.mode(
-                  Color(0xFF1DB9DD),
-                  BlendMode.srcIn,
+          child: Container(
+            color: dottedBorderContainerColor,
+            child: Stack(
+              alignment: AlignmentDirectional.center,
+              children: [
+                //
+                Image.asset('assets/images/shoes_pack-01.png'),
+                SvgPicture.asset(
+                  'assets/icons/add.svg',
+                  colorFilter: addIconColorFilter,
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

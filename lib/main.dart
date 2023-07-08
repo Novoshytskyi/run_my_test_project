@@ -20,5 +20,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-// TODO: цвета, стили, текст - вынести в constants

@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
@@ -16,10 +17,10 @@ class CoinData {
 
       return lastPrice;
     } else {
-      print(response.statusCode);
+      debugPrint(response.statusCode.toString());
 
       if (response.statusCode == 429) {
-        print('Превышен суточный лимит запросов!');
+        debugPrint('Превышен суточный лимит запросов!');
       }
 
       throw 'Problem with the get request';

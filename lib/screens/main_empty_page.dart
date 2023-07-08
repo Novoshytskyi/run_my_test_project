@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../coin_data.dart';
-import '../components/big_dotted_border_container.dart';
-import '../components/bottom_tab_bar.dart';
-import '../components/progress_bar_container.dart';
-import '../components/small_dotted_border_container.dart';
-import '../components/start_button.dart';
-import '../components/svg_icon_with_shadow_button.dart';
+import 'package:run_my_test_project/coin_data.dart';
+import 'package:run_my_test_project/components/big_dotted_border_container.dart';
+import 'package:run_my_test_project/components/bottom_tab_bar.dart';
+import 'package:run_my_test_project/components/progress_bar_container.dart';
+import 'package:run_my_test_project/components/small_dotted_border_container.dart';
+import 'package:run_my_test_project/components/start_button.dart';
+import 'package:run_my_test_project/components/svg_icon_with_shadow_button.dart';
+import 'package:run_my_test_project/colors_constants.dart';
 
 class MainEmptyPage extends StatefulWidget {
   const MainEmptyPage({super.key, required this.title});
@@ -30,7 +31,7 @@ class _MainEmptyPageState extends State<MainEmptyPage> {
         receivedData = '1 BTC = $bitcoinValue $selectedCurrency';
       });
     } catch (e) {
-      print(e);
+      debugPrint(e.toString());
     }
   }
 
@@ -43,8 +44,7 @@ class _MainEmptyPageState extends State<MainEmptyPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF15181E), //##16171D
-
+      backgroundColor: mainEmptyPageBackgroundColor,
       body: ListView(
         children: <Widget>[
           Stack(
@@ -70,12 +70,8 @@ class _MainEmptyPageState extends State<MainEmptyPage> {
                     'assets/icons/settings.svg',
                     height: 32.0,
                     width: 32.0,
-                    colorFilter: const ColorFilter.mode(
-                      Color(0xFFFFFFFF),
-                      BlendMode.srcIn,
-                    ),
+                    colorFilter: iconColorFilter,
                   ),
-                  shadowColor: Colors.grey[500],
                   onPress: () {},
                 ),
               ),
@@ -89,7 +85,7 @@ class _MainEmptyPageState extends State<MainEmptyPage> {
               const Text(
                 'Hello, d.push91@gmail.com',
                 style: TextStyle(
-                  color: Color(0xFFFFFFFF),
+                  color: textColor,
                   fontSize: 20.0,
                   fontWeight: FontWeight.w800,
                   fontFamily: 'Avenir',
@@ -109,7 +105,7 @@ class _MainEmptyPageState extends State<MainEmptyPage> {
                   Text(
                     receivedData,
                     style: const TextStyle(
-                        color: Color(0xFFFFFFFF),
+                        color: textColor,
                         fontSize: 14.0,
                         fontWeight: FontWeight.w600,
                         fontFamily: 'Poppins'),
@@ -151,13 +147,9 @@ class _MainEmptyPageState extends State<MainEmptyPage> {
                     ProgressBarContainer(
                       icon: SvgPicture.asset(
                         'assets/icons/durability.svg',
-                        colorFilter: const ColorFilter.mode(
-                          Colors.white,
-                          BlendMode.srcIn,
-                        ),
+                        colorFilter: iconColorFilter,
                       ),
                       text: '0.0K /50K',
-                      color: const Color(0xFF111016),
                     ),
                     const SizedBox(
                       height: 18.0,
@@ -165,21 +157,15 @@ class _MainEmptyPageState extends State<MainEmptyPage> {
                     ProgressBarContainer(
                       icon: SvgPicture.asset(
                         'assets/icons/power.svg',
-                        colorFilter: const ColorFilter.mode(
-                          Colors.white,
-                          BlendMode.srcIn,
-                        ),
+                        colorFilter: iconColorFilter,
                       ),
                       text: '0.0/0.0',
-                      color: const Color(0xFF111016),
                     ),
                     const SizedBox(
                       height: 48.0,
                     ),
                     StartButton(
                       text: 'Start',
-                      textColor: const Color(0xFFFFFFFF),
-                      backgroundColor: const Color(0xFF1DB9DD),
                       onPress: () {
                         setState(() {
                           selectedCurrency = 'EUR';

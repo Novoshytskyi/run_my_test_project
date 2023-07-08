@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:run_my_test_project/colors_constants.dart';
 
 class BottomTabBar extends StatelessWidget {
   const BottomTabBar({
@@ -11,7 +12,7 @@ class BottomTabBar extends StatelessWidget {
     return Container(
       height: 64.0,
       decoration: const BoxDecoration(
-        color: Color(0xFF111016),
+        color: bottomTabBarColor,
         borderRadius: BorderRadius.all(Radius.circular(32.0)),
       ),
       child: Padding(
@@ -26,40 +27,28 @@ class BottomTabBar extends StatelessWidget {
               onPressed: () {},
               icon: SvgPicture.asset(
                 'assets/icons/tabbar_main.svg',
-                colorFilter: const ColorFilter.mode(
-                  Color(0xFFFFFFFF),
-                  BlendMode.srcIn,
-                ),
+                colorFilter: iconColorFilter,
               ),
             ),
             IconButton(
               onPressed: () {},
               icon: SvgPicture.asset(
                 'assets/icons/inventory.svg',
-                colorFilter: const ColorFilter.mode(
-                  Color(0xFFFFFFFF),
-                  BlendMode.srcIn,
-                ),
+                colorFilter: iconColorFilter,
               ),
             ),
             IconButton(
               onPressed: () {},
               icon: SvgPicture.asset(
                 'assets/icons/tabbar_referral-1.svg',
-                colorFilter: const ColorFilter.mode(
-                  Color(0xFFFFFFFF),
-                  BlendMode.srcIn,
-                ),
+                colorFilter: iconColorFilter,
               ),
             ),
             IconButton(
               onPressed: () {},
               icon: SvgPicture.asset(
                 'assets/icons/tabbar_shop-1.svg',
-                colorFilter: const ColorFilter.mode(
-                  Color(0xFFFFFFFF),
-                  BlendMode.srcIn,
-                ),
+                colorFilter: iconColorFilter,
               ),
             ),
           ],

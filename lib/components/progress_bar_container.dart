@@ -1,25 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:run_my_test_project/colors_constants.dart';
 
 class ProgressBarContainer extends StatelessWidget {
   const ProgressBarContainer({
     super.key,
     required this.icon,
     required this.text,
-    required this.color,
   });
 
   final SvgPicture icon;
   final String text;
-  final Color? color;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 32.0,
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: const BorderRadius.all(Radius.circular(16.0)),
+      decoration: const BoxDecoration(
+        color: progressBarContainerColor,
+        borderRadius: BorderRadius.all(Radius.circular(16.0)),
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(
@@ -33,7 +32,7 @@ class ProgressBarContainer extends StatelessWidget {
             Text(
               text,
               style: const TextStyle(
-                color: Color(0xFFFFFFFF),
+                color: textColor,
                 fontSize: 16.0,
                 fontWeight: FontWeight.w800,
                 fontFamily: 'Avenir',
