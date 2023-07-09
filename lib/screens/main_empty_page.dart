@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:run_my_test_project/coin_data.dart';
 import 'package:run_my_test_project/components/big_dotted_border_container.dart';
-import 'package:run_my_test_project/components/bottom_tab_bar.dart';
 import 'package:run_my_test_project/components/progress_bar_container.dart';
 import 'package:run_my_test_project/components/small_dotted_border_container.dart';
 import 'package:run_my_test_project/components/start_button.dart';
 import 'package:run_my_test_project/components/svg_icon_with_shadow_button.dart';
 import 'package:run_my_test_project/colors_constants.dart';
+import 'package:run_my_test_project/components/tab_bar.dart';
 
 class MainEmptyPage extends StatefulWidget {
   const MainEmptyPage({super.key, required this.title});
@@ -176,7 +176,7 @@ class _MainEmptyPageState extends State<MainEmptyPage> {
                     const SizedBox(
                       height: 26.0,
                     ),
-                    const BottomTabBar(),
+                    const TabBarNew(),
                   ],
                 ),
               ),

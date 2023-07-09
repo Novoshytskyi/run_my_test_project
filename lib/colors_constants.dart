@@ -21,6 +21,11 @@ const iconColorFilter = ColorFilter.mode(
   BlendMode.srcIn,
 );
 
+const unselectedIconColorFilter = ColorFilter.mode(
+  Color(0xFFA0A0A1),
+  BlendMode.srcIn,
+);
+
 const addIconColorFilter = ColorFilter.mode(
   Color(0xFF1DB9DD),
   BlendMode.srcIn,
