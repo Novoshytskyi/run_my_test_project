@@ -14,32 +14,39 @@ class ProgressBarContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 32.0,
-      decoration: const BoxDecoration(
-        color: progressBarContainerColor,
-        borderRadius: BorderRadius.all(Radius.circular(16.0)),
+    return Card(
+      color: Colors.transparent,
+      elevation: 6.0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
       ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(
-          vertical: 2.0,
-          horizontal: 16.0,
+      child: Container(
+        height: 32.0,
+        decoration: const BoxDecoration(
+          color: progressBarContainerColor,
+          borderRadius: BorderRadius.all(Radius.circular(16.0)),
         ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            icon,
-            Text(
-              text,
-              style: const TextStyle(
-                color: textColor,
-                fontSize: 16.0,
-                fontWeight: FontWeight.w800,
-                fontFamily: 'Avenir',
-                fontStyle: FontStyle.italic,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+            vertical: 2.0,
+            horizontal: 16.0,
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              icon,
+              Text(
+                text,
+                style: const TextStyle(
+                  color: textColor,
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w800,
+                  fontFamily: 'Avenir',
+                  fontStyle: FontStyle.italic,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

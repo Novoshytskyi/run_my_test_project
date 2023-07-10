@@ -16,7 +16,7 @@ class StartButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPress,
       style: ButtonStyle(
-        elevation: MaterialStateProperty.all(4.0),
+        elevation: MaterialStateProperty.all(6.0),
         backgroundColor: MaterialStateProperty.all(startButtonBackgroundColor),
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
