@@ -32,7 +32,7 @@ class StartButton extends StatelessWidget {
             Text(
               text,
               style: const TextStyle(
-                color: textColor,
+                color: mainTextColor,
                 fontSize: 16.0,
                 fontWeight: FontWeight.w800,
                 fontFamily: 'Avenir',

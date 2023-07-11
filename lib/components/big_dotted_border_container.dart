@@ -11,7 +11,7 @@ class BigDottedBorderContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DottedBorder(
-      dashPattern: const [4, 8],
+      dashPattern: const [7, 6],
       strokeCap: StrokeCap.round,
       color: dottedBorderColor,
       strokeWidth: 2,
