@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 const bottomTabBarColor = Color(0xFF111016);
 
+const selectedItemTabBarBackgroundColor = Color(0xFF424266);
+
 const dottedBorderColor = Color(0xFF174956); // #154756 // #174956 #174956
 
 const dottedBorderContainerColor = Color(0xFF111016);

@@ -11,6 +11,57 @@ class TabBarNew extends StatefulWidget {
 
 class _TabBarNewState extends State<TabBarNew> {
   int selectedIndex = 0;
+  BorderRadiusGeometry? tabBorderRadius;
+
+  BorderRadiusGeometry getTabBorderRadius(int selectedIndex) {
+    if (selectedIndex == 0) {
+      return const BorderRadius.only(
+        topLeft: Radius.circular(32),
+        bottomLeft: Radius.circular(32.0),
+      );
+    } else if (selectedIndex == 3) {
+      return const BorderRadius.only(
+        topRight: Radius.circular(32),
+        bottomRight: Radius.circular(32.0),
+      );
+    } else {
+      return BorderRadius.zero;
+    }
+  }
+
+  Gradient getGradient(int selectedIndex) {
+    if (selectedIndex == 0) {
+      return const LinearGradient(
+        begin: Alignment.centerLeft,
+        colors: [
+          selectedItemTabBarBackgroundColor,
+          selectedItemTabBarBackgroundColor,
+          selectedItemTabBarBackgroundColor,
+          bottomTabBarColor,
+        ],
+      );
+    } else if (selectedIndex == 3) {
+      return const LinearGradient(
+        colors: [
+          bottomTabBarColor,
+          selectedItemTabBarBackgroundColor,
+          selectedItemTabBarBackgroundColor,
+          selectedItemTabBarBackgroundColor,
+        ],
+      );
+    } else {
+      return const LinearGradient(
+        colors: [
+          bottomTabBarColor,
+          selectedItemTabBarBackgroundColor,
+          selectedItemTabBarBackgroundColor,
+          selectedItemTabBarBackgroundColor,
+          bottomTabBarColor,
+        ],
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -24,7 +75,7 @@ class _TabBarNewState extends State<TabBarNew> {
         child: Container(
           height: 64.0,
           decoration: const BoxDecoration(
-            color: bottomTabBarColor,
+            color: bottomTabBarColor, //???
             borderRadius: BorderRadius.all(Radius.circular(32.0)),
           ),
           child: TabBar(
@@ -35,7 +86,11 @@ class _TabBarNewState extends State<TabBarNew> {
               });
             },
             dividerColor: Colors.transparent,
-            indicatorColor: bottomTabBarColor,
+            indicatorSize: TabBarIndicatorSize.tab,
+            indicator: BoxDecoration(
+              gradient: getGradient(selectedIndex),
+              borderRadius: getTabBorderRadius(selectedIndex),
+            ),
             tabs: [
               Tab(
                 icon: SvgPicture.asset(

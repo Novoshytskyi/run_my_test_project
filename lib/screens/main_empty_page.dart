@@ -54,118 +54,116 @@ class _MainEmptyPageState extends State<MainEmptyPage> {
                   Center(
                     child: Padding(
                       padding: const EdgeInsets.only(top: 135.0),
-                      child: Container(
-                        child: Stack(
-                          children: [
-                            Image.asset(
-                              'assets/images/rectangle_9_.png',
-                              fit: BoxFit.fill,
-                            ),
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                const SizedBox(
-                                  height: 119.0,
+                      child: Stack(
+                        children: [
+                          Image.asset(
+                            'assets/images/rectangle_9_.png',
+                            fit: BoxFit.fill,
+                          ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              const SizedBox(
+                                height: 119.0,
+                              ),
+                              const Text(
+                                'Hello, d.push91@gmail.com',
+                                style: TextStyle(
+                                  color: mainTextColor,
+                                  fontSize: 20.0,
+                                  fontWeight: FontWeight.w800,
+                                  fontFamily: 'Avenir',
+                                  fontStyle: FontStyle.italic,
                                 ),
-                                const Text(
-                                  'Hello, d.push91@gmail.com',
-                                  style: TextStyle(
-                                    color: mainTextColor,
-                                    fontSize: 20.0,
-                                    fontWeight: FontWeight.w800,
-                                    fontFamily: 'Avenir',
-                                    fontStyle: FontStyle.italic,
+                              ),
+                              const SizedBox(
+                                height: 8.0,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Image.asset('assets/icons/ic_coin.png'),
+                                  const SizedBox(
+                                    width: 10.0,
                                   ),
+                                  Text(
+                                    receivedData,
+                                    style: const TextStyle(
+                                        color: mainTextColor,
+                                        fontSize: 14.0,
+                                        fontWeight: FontWeight.w600,
+                                        fontFamily: 'Poppins'),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 48.0,
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                  left: 24.0,
+                                  right: 24.0,
+                                  top: 0.0,
+                                  bottom: 25.0,
                                 ),
-                                const SizedBox(
-                                  height: 8.0,
-                                ),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
+                                child: Column(
                                   children: [
-                                    Image.asset('assets/icons/ic_coin.png'),
+                                    const BigDottedBorderContainer(),
                                     const SizedBox(
-                                      width: 10.0,
+                                      height: 28.0,
                                     ),
-                                    Text(
-                                      receivedData,
-                                      style: const TextStyle(
-                                          color: mainTextColor,
-                                          fontSize: 14.0,
-                                          fontWeight: FontWeight.w600,
-                                          fontFamily: 'Poppins'),
+                                    const Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        SmallDottedBorderContainer(),
+                                        SmallDottedBorderContainer(),
+                                        SmallDottedBorderContainer(),
+                                        SmallDottedBorderContainer(),
+                                      ],
                                     ),
+                                    const SizedBox(
+                                      height: 40.0,
+                                    ),
+                                    ProgressBarContainer(
+                                      icon: SvgPicture.asset(
+                                        'assets/icons/durability.svg',
+                                        colorFilter: iconColorFilter,
+                                      ),
+                                      text: '0.0K /50K',
+                                    ),
+                                    const SizedBox(
+                                      height: 18.0,
+                                    ),
+                                    ProgressBarContainer(
+                                      icon: SvgPicture.asset(
+                                        'assets/icons/power.svg',
+                                        colorFilter: iconColorFilter,
+                                      ),
+                                      text: '0.0/0.0',
+                                    ),
+                                    const SizedBox(
+                                      height: 44.0,
+                                    ),
+                                    StartButton(
+                                      text: 'Start',
+                                      onPress: () {
+                                        setState(() {
+                                          selectedCurrency = 'EUR';
+                                          getData();
+                                        });
+                                      },
+                                    ),
+                                    const SizedBox(
+                                      height: 20.0,
+                                    ),
+                                    const TabBarNew(),
                                   ],
                                 ),
-                                const SizedBox(
-                                  height: 48.0,
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                    left: 24.0,
-                                    right: 24.0,
-                                    top: 0.0,
-                                    bottom: 25.0,
-                                  ),
-                                  child: Column(
-                                    children: [
-                                      const BigDottedBorderContainer(),
-                                      const SizedBox(
-                                        height: 28.0,
-                                      ),
-                                      const Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          SmallDottedBorderContainer(),
-                                          SmallDottedBorderContainer(),
-                                          SmallDottedBorderContainer(),
-                                          SmallDottedBorderContainer(),
-                                        ],
-                                      ),
-                                      const SizedBox(
-                                        height: 40.0,
-                                      ),
-                                      ProgressBarContainer(
-                                        icon: SvgPicture.asset(
-                                          'assets/icons/durability.svg',
-                                          colorFilter: iconColorFilter,
-                                        ),
-                                        text: '0.0K /50K',
-                                      ),
-                                      const SizedBox(
-                                        height: 18.0,
-                                      ),
-                                      ProgressBarContainer(
-                                        icon: SvgPicture.asset(
-                                          'assets/icons/power.svg',
-                                          colorFilter: iconColorFilter,
-                                        ),
-                                        text: '0.0/0.0',
-                                      ),
-                                      const SizedBox(
-                                        height: 44.0,
-                                      ),
-                                      StartButton(
-                                        text: 'Start',
-                                        onPress: () {
-                                          setState(() {
-                                            selectedCurrency = 'EUR';
-                                            getData();
-                                          });
-                                        },
-                                      ),
-                                      const SizedBox(
-                                        height: 20.0,
-                                      ),
-                                      const TabBarNew(),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
+                              ),
+                            ],
+                          )
+                        ],
                       ),
                     ),
                   ),
